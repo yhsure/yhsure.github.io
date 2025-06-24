@@ -141,7 +141,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Riemannian representation learning typically relies on complex density approximations on specific manifolds. We introduce the Riemannian generative decoder, which discards the encoder and jointly optimizes manifold-valued latents via Riemannian Adam alongside a decoder network. This encoder-free scheme handles any Riemannian manifold, simplifies constraints, and uses geometry-aware regularization through input noise. We validate on three case studies—a branching diffusion process, human mitochondrial DNA, and cell-division cycle data—demonstrating geometry-aligned, interpretable latent spaces. 
+            Riemannian representation learning typically relies on approximating densities on chosen manifolds. This involves optimizing difficult objectives, potentially harming models. To completely circumvent this issue, we introduce the Riemannian generative decoder which finds manifold-valued maximum likelihood latents with a Riemannian optimizer while training a decoder network. By discarding the encoder, we vastly simplify the manifold constraint compared to current approaches which often only handle few specific manifolds. We validate our approach on three case studies — a synthetic branching diffusion process, human migrations inferred from mitochondrial DNA, and cells undergoing a cell division cycle — each showing that learned representations respect the prescribed geometry and capture intrinsic non-Euclidean structure. Our method requires only a decoder, is compatible with existing architectures, and yields interpretable latent spaces aligned with data geometry. 
           </p>
         </div>
       </div>
