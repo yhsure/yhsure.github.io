@@ -1,177 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- SEO-friendly redirect meta tags -->
+  <meta http-equiv="refresh" content="0; url=https://yhsure.github.io/blog/riemannian-generative-decoder">
+  <link rel="canonical" href="https://yhsure.github.io/blog/riemannian-generative-decoder">
+  
+  <!-- Original meta tags preserved for SEO -->
   <meta name="description" content="Project page for the Riemannian generative decoder.">
   <meta property="og:title" content="Riemannian generative decoder"/>
   <meta property="og:description" content="Decoder-only Riemannian representation learning via maximum likelihood."/>
-  <meta property="og:url" content="https://yhsure.github.io/riemannian-generative-decoder/"/>
-  <meta property="og:image" content="figures/frontpage_rgd.png"/>
+  <meta property="og:url" content="https://yhsure.github.io/blog/riemannian-generative-decoder"/>
+  <meta property="og:image" content="https://yhsure.github.io/blog/riemannian-generative-decoder/figures/frontpage_rgd.png"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
   <meta name="twitter:title" content="Riemannian generative decoder">
-
   <meta name="twitter:description" content="Decoder-only Riemannian representation learning via maximum likelihood.">
-  <meta name="twitter:image" content="figures/frontpage_rgd.png">
+  <meta name="twitter:image" content="https://yhsure.github.io/blog/riemannian-generative-decoder/figures/frontpage_rgd.png">
   <meta name="twitter:card" content="summary_large_image">
-
   <meta name="keywords" content="Riemannian generative decoder, manifold learning, representation learning, biology, Riemannian manifolds, geometric machine learning, unsupervised learning, generative models, latent variable models, Riemannian optimization, Riemannian Adam, geometry, Riemannian latent space">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Riemannian generative decoder</title>
-  <link href="https://uploads-ssl.webflow.com/5ba81c539ad7871a941f69a7/5bb5a4c4e422146e76121b2f_favicon.png" rel="shortcut icon" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-  <link rel="stylesheet" href="../shared/css/bulma.min.css">
-  <link rel="stylesheet" href="../shared/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="../shared/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="../shared/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="../shared/js/fontawesome.all.min.js"></script>
-  <script src="../shared/js/bulma-carousel.min.js"></script>
-  <script src="../shared/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
-  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  
+  <title>Riemannian generative decoder - Moved</title>
+  
+  <!-- Structured data for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Riemannian generative decoder",
+    "description": "Decoder-only Riemannian representation learning via maximum likelihood.",
+    "url": "https://yhsure.github.io/blog/riemannian-generative-decoder",
+    "mainEntity": {
+      "@type": "ScholarlyArticle",
+      "name": "Riemannian generative decoder",
+      "url": "https://yhsure.github.io/blog/riemannian-generative-decoder"
+    }
+  }
+  </script>
+  
+  <!-- JavaScript redirect as fallback -->
+  <script>
+    // Immediate redirect
+    window.location.replace('https://yhsure.github.io/blog/riemannian-generative-decoder');
+  </script>
+  
+  <!-- Basic styling for fallback content -->
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #333;
+    }
+    .redirect-box {
+      background: #f0f8ff;
+      border: 2px solid #4a90e2;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      text-align: center;
+    }
+    .redirect-link {
+      display: inline-block;
+      background: #4a90e2;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    .redirect-link:hover {
+      background: #357abd;
+    }
+  </style>
 </head>
 <body>
-
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <img src="figures/frontpage_rgd.png" alt="Methodological overview" class="logo" style="height:20em; max-width:100%; height:auto; max-height:20em;">
-        </div>
-        <div class="column has-text-centered">
-          <h1 class="title is-2 publication-title">Riemannian generative decoder</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://yhsure.github.io" target="_blank">Andreas Bjerregaard</a>*<sup>†</sup>,</span>
-            <span class="author-block">
-              <a href="https://www2.compute.dtu.dk/~sohau/" target="_blank">Søren Hauberg</a><sup>‡</sup>,</span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=-vGMjmwAAAAJ" target="_blank">Anders Krogh</a><sup>†</sup>
-            </span>
-          </div>
-          <div class="is-size-5 publication-authors">
-            <span class="is-size-6 author-block">
-              <sup>†</sup>University of Copenhagen,&nbsp;<sup>‡</sup>Technical University of Denmark<br>
-              <sup>*</sup>Correspondance: anje [at] di [dot] ku [dot] dk
-            </span>
-          </div>
-          </div>
-                <div class="column has-text-centered">
-                  <div class="publication-links">
-
-                   <!-- Arxiv PDF link -->
-                   <span class="link-block">
-                    <a href="https://arxiv.org/pdf/2506.19133" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Paper</span>
-                    </a>
-                  </span>
-
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/yhsure/riemannian-generative-decoder" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2506.19133" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-
-
-
-                <!-- Dataset -->
-                  <span class="link-block">
-                      <a href="https://huggingface.co/datasets/yhsure/riemannian-generative-decoder" target="_blank"
-                          class="external-link button is-normal is-rounded is-dark">
-                          <span class="icon" style="vertical-align: middle; font-size: 20px;">&#129303;</span>
-                          <span style="vertical-align: middle;">Dataset</span>
-                      </a>
-                  </span>    
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="hero teaser" style="margin-top:-3rem; padding-top:0; margin-bottom:1.5rem;">
-    <div class="text-box">
-      <p><strong>tl;dr:</strong> Simpler representation learning on manifolds. We propose a decoder-only framework  to learn latents on arbitrary Riemannian manifolds via maximum likelihood and Riemannian optimization. We highlight its use with biological case studies.</p>
-    </div>
-    <style>
-      .text-box {
-        max-width: 950px; margin: 1rem auto; padding: 20px;
-        background-color: #ccf1ae; border: 3px solid #79e245;
-        border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-        text-align: center; font-size: 1.25rem; line-height: 1.6;
-      }
-      .text-box strong { font-weight: bold; }
-    </style>
-  </section>
-
-  <!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Riemannian representation learning typically relies on approximating densities on chosen manifolds. This involves optimizing difficult objectives, potentially harming models. To completely circumvent this issue, we introduce the Riemannian generative decoder which finds manifold-valued maximum likelihood latents with a Riemannian optimizer while training a decoder network. By discarding the encoder, we vastly simplify the manifold constraint compared to current approaches which often only handle few specific manifolds. We validate our approach on three case studies — a synthetic branching diffusion process, human migrations inferred from mitochondrial DNA, and cells undergoing a cell division cycle — each showing that learned representations respect the prescribed geometry and capture intrinsic non-Euclidean structure. Our method requires only a decoder, is compatible with existing architectures, and yields interpretable latent spaces aligned with data geometry. 
-          </p>
-        </div>
-      </div>
-    </div>
+  <div class="redirect-box">
+    <h1>Page Moved</h1>
+    <p>The <strong>Riemannian generative decoder</strong> project page has moved to a new location.</p>
+    <p>You will be automatically redirected in a moment.</p>
+    <a href="https://yhsure.github.io/blog/riemannian-generative-decoder" class="redirect-link">
+      Click here if you are not redirected automatically
+    </a>
   </div>
-</section>
-<!-- End paper abstract -->
-
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>@inproceedings{bjerregaard2025riemannian,
-  title     = {Riemannian generative decoder},
-  author    = {Bjerregaard, Andreas and Hauberg, Søren and Krogh, Anders},
-  booktitle = {ICML 2025 Workshop on Generative AI and Biology},
-  month     = {July},
-  year      = {2025}
-}</code></pre>
+  
+  <noscript>
+    <div class="redirect-box">
+      <h2>JavaScript Disabled</h2>
+      <p>Please <a href="https://yhsure.github.io/blog/riemannian-generative-decoder">click here</a> to visit the new page.</p>
     </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="content has-text-centered">
-        <p>
-          This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-          You are free to borrow this website, we just ask that you link back to this page in the footer. This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-          Commons Attribution-ShareAlike 4.0 International License</a>.
-      </p>
-      </div>
-    </div>
-  </footer>
-
+  </noscript>
 </body>
 </html>
