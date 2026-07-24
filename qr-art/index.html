@@ -1,121 +1,20 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Turn pixel art into working, locally generated QR codes.">
-  <meta property="og:title" content="Gridproof — Pixel Art QR Studio">
-  <meta property="og:description" content="Make the image carry the message.">
-  <meta name="twitter:card" content="summary_large_image">
-  <title>Gridproof — Pixel Art QR Studio</title>
-  <link rel="icon" href="favicon.svg">
-  <link rel="stylesheet" href="style.css">
-  <script type="module" src="app.js"></script>
-</head>
-<body>
-  <main>
-    <header class="masthead">
-      <a class="wordmark" href="#studio">Gridproof</a>
-      <p>Pixel-art QR studio</p>
-      <nav>
-        <a href="#notes">Method</a>
-        <a href="https://github.com/yhsure/yhsure.github.io/tree/main/qr-art" target="_blank" rel="noreferrer">Source ↗</a>
-      </nav>
-    </header>
-
-    <section class="intro" aria-labelledby="title">
-      <p class="eyebrow">A small instrument for useful pictures</p>
-      <h1 id="title">Make the image<br>carry the message.</h1>
-      <p class="dek">Fuse pixel art with a real QR matrix, then tune the compromise between pictorial detail and reliable scanning.</p>
-      <p class="folio">No. 01 <span>Built locally in your browser</span></p>
-    </section>
-
-    <section class="studio" id="studio">
-      <aside class="source-panel" aria-labelledby="source-title">
-        <div class="section-heading"><span>01</span><h2 id="source-title">Source</h2></div>
-        <label class="field">
-          <span>Link or text</span>
-          <textarea id="payload" rows="4" spellcheck="false">https://yhsure.github.io/qr-art/</textarea>
-          <small id="count">32 characters</small>
-        </label>
-        <fieldset>
-          <legend>Artwork</legend>
-          <div class="preset-grid">
-            <button type="button" class="preset active" data-preset="nocturne"><span class="swatch" style="background:linear-gradient(135deg,#162a42,#e8bc68,#52718a)"></span><span>Nocturne</span></button>
-            <button type="button" class="preset" data-preset="pond"><span class="swatch" style="background:linear-gradient(135deg,#174f55,#e06345,#c8d9b0)"></span><span>Koi pond</span></button>
-            <button type="button" class="preset" data-preset="orchard"><span class="swatch" style="background:linear-gradient(135deg,#71834c,#ae3f2f,#e8d39d)"></span><span>Orchard</span></button>
-            <button type="button" class="preset" data-preset="dusk"><span class="swatch" style="background:linear-gradient(135deg,#542d55,#e87f55,#f1c16c)"></span><span>Afterglow</span></button>
-            <button type="button" class="preset" data-preset="lattice"><span class="swatch" style="background:linear-gradient(135deg,#173a4a,#d8aa52,#bc4f3b)"></span><span>Lattice</span></button>
-            <button type="button" class="preset" data-preset="wildflower"><span class="swatch" style="background:linear-gradient(135deg,#77864d,#d75b43,#eee1bd)"></span><span>Wildflower</span></button>
-          </div>
-        </fieldset>
-        <label class="dropzone" id="dropzone">
-          <input id="upload" type="file" accept="image/png,image/jpeg,image/webp,image/gif">
-          <span id="upload-label">Custom artwork</span>
-          <small id="upload-name">Upload artwork</small>
-        </label>
-      </aside>
-
-      <section class="proof" aria-labelledby="proof-title">
-        <div class="proof-head">
-          <div><span class="kicker">Live proof</span><h2 id="proof-title">Scan before you publish.</h2></div>
-          <div class="scan-state checking" id="scan-state" role="status" aria-live="polite"><span></span><b>Preparing scan test…</b></div>
-        </div>
-        <div class="canvas-wrap">
-          <canvas id="canvas" aria-label="Generated pixel art QR code preview"></canvas>
-          <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-        </div>
-        <div class="proof-meta">
-          <p><span>Matrix</span> <b id="matrix">— × —</b></p>
-          <p><span>Version</span> <b id="version">—</b></p>
-          <p><span>Correction</span> <b id="correction-label">High · 30%</b></p>
-        </div>
-      </section>
-
-      <aside class="control-panel" aria-labelledby="control-title">
-        <div class="section-heading"><span>02</span><h2 id="control-title">Treatment</h2></div>
-        <label class="range-field">
-          <span>Scannability <b id="strength-label">78</b></span>
-          <input id="strength" type="range" min="45" max="100" value="78">
-          <small><span>Art first</span><span>Scan first</span></small>
-        </label>
-        <fieldset>
-          <legend>Pixel treatment</legend>
-          <div class="segmented" id="marks">
-            <button type="button" data-mark="pinpoint"><i class="mark-icon pinpoint"></i>pinpoint</button>
-            <button type="button" data-mark="cross"><i class="mark-icon cross"></i>cross</button>
-            <button type="button" class="active" data-mark="tile"><i class="mark-icon tile"></i>tile</button>
-          </div>
-        </fieldset>
-        <label class="select-field">
-          <span>Error correction</span>
-          <select id="correction"><option value="M">Medium · 15%</option><option value="Q">Quartile · 25%</option><option value="H" selected>High · 30%</option></select>
-        </label>
-        <label class="toggle-field">
-          <span><b>Ordered dither</b><small>Breaks the mechanical grid</small></span>
-          <input id="dither" type="checkbox" checked>
-        </label>
-        <div class="section-heading export-heading"><span>03</span><h2>Export</h2></div>
-        <div class="export-row">
-          <label class="select-field compact"><span>Format</span><select id="format"><option value="png">PNG</option><option value="webp">WebP</option><option value="svg">SVG</option></select></label>
-          <label class="select-field compact"><span>Size</span><select id="size"><option value="512">512 px</option><option value="1024" selected>1024 px</option><option value="2048">2048 px</option></select></label>
-        </div>
-        <button class="download" id="download" type="button">Download PNG <span>↓</span></button>
-        <div class="secondary-actions"><button id="copy" type="button">Copy PNG</button><button id="reset" type="button">Safe reset</button></div>
-        <p class="privacy">Your artwork and data never leave this page.</p>
-      </aside>
-    </section>
-
-    <section class="notes" id="notes">
-      <div><p class="eyebrow">Method note</p><h2>The code is a layer,<br>not a frame.</h2></div>
-      <div class="note-columns">
-        <p><sup>1</sup> Finder, timing, and alignment patterns remain full weight. They give the scanner a stable skeleton.</p>
-        <p><sup>2</sup> Data modules become small luminance samples drawn into the art. Their color follows the picture; their brightness follows the code.</p>
-        <p><sup>3</sup> The live proof is decoded independently after every change. Still test the downloaded file on the device and material you intend to use.</p>
-      </div>
-      <a class="reference" href="https://www.reddit.com/r/PixelArt/comments/1v52x96/tutorial_turn_pixel_art_into_a_working_qrcode/" target="_blank" rel="noreferrer">Technique inspired by the pixel-art QR tutorial ↗</a>
-    </section>
-    <footer><p>Gridproof · an open studio by yhsure</p><p>Good pictures, honest codes.</p></footer>
-  </main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Blend pixel art into working, locally generated QR codes." />
+    <meta property="og:title" content="Gridproof — Pixel Art QR Studio" />
+    <meta property="og:description" content="The artwork supplies the signal." />
+    <meta property="og:image" content="https://yhsure.github.io/qr-art/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://yhsure.github.io/qr-art/og.png" />
+    <link rel="icon" href="./favicon.svg" />
+    <title>Gridproof — Pixel Art QR Studio</title>
+    <script type="module" crossorigin src="/qr-art/assets/index-DbNLtHLf.js"></script>
+    <link rel="stylesheet" crossorigin href="/qr-art/assets/index-BmoUps4k.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
