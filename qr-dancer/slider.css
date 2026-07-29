@@ -1,0 +1,109 @@
+.range-field input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: ew-resize;
+  height: 28px;
+  margin: 4px 0 0;
+  touch-action: pan-y;
+}
+
+.range-field input[type="range"]:focus-visible {
+  outline: 0;
+}
+
+.range-field input[type="range"]::-webkit-slider-runnable-track {
+  background: linear-gradient(
+    to right,
+    var(--ink) 0 var(--range-progress),
+    var(--rule) var(--range-progress) 100%
+  );
+  border-radius: 2px;
+  height: 3px;
+}
+
+.range-field input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--paper-light);
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--paper);
+  height: 15px;
+  margin-top: -6px;
+  transition: background-color 120ms ease, box-shadow 120ms ease,
+    transform 120ms cubic-bezier(.2, .8, .2, 1);
+  width: 15px;
+}
+
+.range-field input[type="range"]:hover::-webkit-slider-thumb {
+  background: var(--ink);
+  transform: scale(1.08);
+}
+
+.range-field input[type="range"]:active::-webkit-slider-thumb {
+  background: var(--red);
+  border-color: var(--red);
+  box-shadow: 0 0 0 4px rgb(166 76 56 / 18%);
+  transform: scale(1.2);
+}
+
+.range-field input[type="range"]:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 4px rgb(166 76 56 / 22%);
+}
+
+.range-field input[type="range"]::-moz-range-track {
+  background: var(--rule);
+  border: 0;
+  border-radius: 2px;
+  height: 3px;
+}
+
+.range-field input[type="range"]::-moz-range-progress {
+  background: var(--ink);
+  border: 0;
+  border-radius: 2px;
+  height: 3px;
+}
+
+.range-field input[type="range"]::-moz-range-thumb {
+  background: var(--paper-light);
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--paper);
+  height: 12px;
+  transition: background-color 120ms ease, box-shadow 120ms ease,
+    transform 120ms cubic-bezier(.2, .8, .2, 1);
+  width: 12px;
+}
+
+.range-field input[type="range"]:hover::-moz-range-thumb {
+  background: var(--ink);
+  transform: scale(1.08);
+}
+
+.range-field input[type="range"]:active::-moz-range-thumb {
+  background: var(--red);
+  border-color: var(--red);
+  box-shadow: 0 0 0 4px rgb(166 76 56 / 18%);
+  transform: scale(1.2);
+}
+
+.range-field:has(input[type="range"]:active) .range-label output {
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.range-label output {
+  min-width: 38px;
+  text-align: right;
+  transition: color 120ms ease, transform 120ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .range-field input[type="range"]::-webkit-slider-thumb,
+  .range-field input[type="range"]::-moz-range-thumb,
+  .range-label output {
+    transition: none;
+  }
+}
