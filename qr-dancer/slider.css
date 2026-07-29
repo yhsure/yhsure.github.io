@@ -13,17 +13,11 @@
 }
 
 .range-field input[type="range"]::-webkit-slider-runnable-track {
-  background:
-    repeating-linear-gradient(
-      to right,
-      rgb(255 255 255 / 20%) 0 1px,
-      transparent 1px 6px
-    ),
-    linear-gradient(
-      to right,
-      var(--ink) 0 var(--range-progress),
-      var(--rule) var(--range-progress) 100%
-    );
+  background: linear-gradient(
+    to right,
+    var(--ink) 0 var(--range-progress),
+    var(--rule) var(--range-progress) 100%
+  );
   border: 1px solid var(--rule-dark);
   border-radius: 3px;
   box-shadow: inset 0 1px 1px rgb(24 25 20 / 18%),
@@ -72,13 +66,7 @@
 }
 
 .range-field input[type="range"]::-moz-range-track {
-  background:
-    repeating-linear-gradient(
-      to right,
-      rgb(255 255 255 / 20%) 0 1px,
-      transparent 1px 6px
-    ),
-    var(--rule);
+  background: var(--rule);
   border: 1px solid var(--rule-dark);
   border-radius: 3px;
   box-shadow: inset 0 1px 1px rgb(24 25 20 / 18%),
@@ -87,13 +75,7 @@
 }
 
 .range-field input[type="range"]::-moz-range-progress {
-  background:
-    repeating-linear-gradient(
-      to right,
-      rgb(255 255 255 / 20%) 0 1px,
-      transparent 1px 6px
-    ),
-    var(--ink);
+  background: var(--ink);
   border: 1px solid var(--ink);
   border-radius: 3px;
   height: 3px;
