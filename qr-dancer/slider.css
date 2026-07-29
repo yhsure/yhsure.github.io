@@ -18,75 +18,97 @@
     var(--ink) 0 var(--range-progress),
     var(--rule) var(--range-progress) 100%
   );
-  border-radius: 2px;
-  height: 3px;
+  border: 1px solid var(--rule-dark);
+  border-radius: 3px;
+  box-shadow: inset 0 1px 1px rgb(24 25 20 / 18%),
+    0 1px 0 rgb(255 255 255 / 70%);
+  height: 5px;
 }
 
 .range-field input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  background: var(--paper-light);
-  border: 2px solid var(--ink);
+  background: radial-gradient(
+    circle at 38% 30%,
+    #fff 0 10%,
+    var(--paper-light) 16% 58%,
+    var(--paper-deep) 100%
+  );
+  border: 1px solid var(--ink);
   border-radius: 50%;
-  box-shadow: 0 0 0 2px var(--paper);
-  height: 15px;
+  box-shadow: inset 0 1px 0 #fff, 0 2px 3px rgb(24 25 20 / 28%),
+    0 0 0 2px var(--paper);
+  height: 17px;
   margin-top: -6px;
   transition: background-color 120ms ease, box-shadow 120ms ease,
     transform 120ms cubic-bezier(.2, .8, .2, 1);
-  width: 15px;
+  width: 17px;
 }
 
 .range-field input[type="range"]:hover::-webkit-slider-thumb {
-  background: var(--ink);
-  transform: scale(1.08);
+  box-shadow: inset 0 1px 0 #fff, 0 3px 5px rgb(24 25 20 / 32%),
+    0 0 0 2px var(--paper);
+  transform: translateY(-1px);
 }
 
 .range-field input[type="range"]:active::-webkit-slider-thumb {
   background: var(--red);
   border-color: var(--red);
-  box-shadow: 0 0 0 4px rgb(166 76 56 / 18%);
-  transform: scale(1.2);
+  box-shadow: inset 0 1px 2px rgb(24 25 20 / 30%),
+    0 0 0 4px rgb(166 76 56 / 18%);
+  transform: translateY(1px) scale(.94);
 }
 
 .range-field input[type="range"]:focus-visible::-webkit-slider-thumb {
-  box-shadow: 0 0 0 4px rgb(166 76 56 / 22%);
+  box-shadow: inset 0 1px 0 #fff, 0 2px 3px rgb(24 25 20 / 28%),
+    0 0 0 4px rgb(166 76 56 / 22%);
 }
 
 .range-field input[type="range"]::-moz-range-track {
   background: var(--rule);
-  border: 0;
-  border-radius: 2px;
+  border: 1px solid var(--rule-dark);
+  border-radius: 3px;
+  box-shadow: inset 0 1px 1px rgb(24 25 20 / 18%),
+    0 1px 0 rgb(255 255 255 / 70%);
   height: 3px;
 }
 
 .range-field input[type="range"]::-moz-range-progress {
   background: var(--ink);
-  border: 0;
-  border-radius: 2px;
+  border: 1px solid var(--ink);
+  border-radius: 3px;
   height: 3px;
 }
 
 .range-field input[type="range"]::-moz-range-thumb {
-  background: var(--paper-light);
-  border: 2px solid var(--ink);
+  background: radial-gradient(
+    circle at 38% 30%,
+    #fff 0 10%,
+    var(--paper-light) 16% 58%,
+    var(--paper-deep) 100%
+  );
+  border: 1px solid var(--ink);
   border-radius: 50%;
-  box-shadow: 0 0 0 2px var(--paper);
-  height: 12px;
+  box-shadow: inset 0 1px 0 #fff, 0 2px 3px rgb(24 25 20 / 28%),
+    0 0 0 2px var(--paper);
+  height: 15px;
   transition: background-color 120ms ease, box-shadow 120ms ease,
     transform 120ms cubic-bezier(.2, .8, .2, 1);
-  width: 12px;
+  width: 15px;
 }
 
 .range-field input[type="range"]:hover::-moz-range-thumb {
-  background: var(--ink);
-  transform: scale(1.08);
+  box-shadow: inset 0 1px 0 #fff, 0 3px 5px rgb(24 25 20 / 32%),
+    0 0 0 2px var(--paper);
+  transform: translateY(-1px);
 }
 
 .range-field input[type="range"]:active::-moz-range-thumb {
   background: var(--red);
   border-color: var(--red);
-  box-shadow: 0 0 0 4px rgb(166 76 56 / 18%);
-  transform: scale(1.2);
+  box-shadow: inset 0 1px 2px rgb(24 25 20 / 30%),
+    0 0 0 4px rgb(166 76 56 / 18%);
+  transform: translateY(1px) scale(.94);
 }
 
 .range-field:has(input[type="range"]:active) .range-label output {
